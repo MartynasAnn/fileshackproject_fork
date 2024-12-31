@@ -125,7 +125,7 @@ var FileShack = new Class({
         var this_ = this;
         xhr.onreadystatechange = function(e) {
             if (this.readyState == 4) {
-                var json = JSON.decode(this.responseText);
+                let json = JSON.decode(this.responseText);
                 this_.removeStaleItems(json.item_ids);
                 Array.each(json.items, function(item) {
                     if (this_.items.get(item.id)) { // Existing item.
